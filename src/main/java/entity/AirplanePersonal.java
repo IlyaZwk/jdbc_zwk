@@ -5,27 +5,27 @@ public class AirplanePersonal {
     private Integer airplaneId;
     private Integer personalId;
 
-    public Integer getId() {
+    public Integer getAirplanePersonalId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setAirplanePersonalId(Integer id) {
         this.id = id;
     }
 
-    public Integer getPersonalId() {
+    public Integer getAirplanePersonalPersonalId() {
         return personalId;
     }
 
-    public void setPersonalId(Integer personalId) {
+    public void setAirplanePersonalPersonalId(Integer personalId) {
         this.personalId = personalId;
     }
 
-    public Integer getAirplaneId() {
+    public Integer getAirplanePersonalAirplaneId() {
         return airplaneId;
     }
 
-    public void setAirplaneId(Integer airplaneId) {
+    public void setAirplanePersonalAirplaneId(Integer airplaneId) {
         this.airplaneId = airplaneId;
     }
 }

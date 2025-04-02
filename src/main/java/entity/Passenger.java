@@ -5,6 +5,8 @@ public class Passenger {
     private String name;
     private String email;
     private Integer luggageId;
+    private String passport;
+    private Integer passengerId;
 
     public Integer getId() {
         return id;
@@ -36,5 +38,21 @@ public class Passenger {
 
     public void setLuggageId(Integer luggageId) {
         this.luggageId = luggageId;
+    }
+
+    public String getPassport() {
+        return passport;
+    }
+
+    public void setPassport(String passport) {
+        this.passport = passport;
+    }
+
+    public Integer getPassengerId() {
+        return passengerId;
+    }
+
+    public void setPassengerId(Integer passengerId) {
+        this.passengerId = passengerId;
     }
 }
