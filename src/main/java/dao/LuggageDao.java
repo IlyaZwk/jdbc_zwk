@@ -15,6 +15,7 @@ public class LuggageDao {
             preparedStatement.setInt(1,luggage.getId());
             preparedStatement.setInt(2,luggage.getWeight());
             preparedStatement.setInt(3,luggage.getLuggageId());
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }

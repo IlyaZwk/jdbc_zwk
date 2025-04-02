@@ -15,6 +15,7 @@ public class PersonalDao {
             preparedStatement.setInt(1,personal.getId());
             preparedStatement.setString(2,personal.getType());
             preparedStatement.setInt(3,personal.getPersonalId());
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }

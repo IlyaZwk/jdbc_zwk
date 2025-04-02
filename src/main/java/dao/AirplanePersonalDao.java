@@ -15,6 +15,7 @@ public class AirplanePersonalDao {
             preparedStatement.setInt(1,airplanePersonal.getAirplanePersonalId());
             preparedStatement.setInt(2,airplanePersonal.getAirplanePersonalAirplaneId());
             preparedStatement.setInt(3,airplanePersonal.getAirplanePersonalAirplaneId());
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }

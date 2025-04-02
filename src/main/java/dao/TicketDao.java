@@ -19,6 +19,7 @@ public class TicketDao {
             preparedStatement.setString(5,ticket.getTypeOfClass());
             preparedStatement.setInt(6,ticket.getLuggageId());
             preparedStatement.setInt(7,ticket.getAirplaneId());
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }

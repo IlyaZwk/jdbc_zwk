@@ -16,6 +16,7 @@ public class AirplaneDao {
             preparedStatement.setInt(1,airplane.getId());
             preparedStatement.setInt(2,airplane.getAirplaneId());
             preparedStatement.setInt(3,airplane.getRouteId());
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }

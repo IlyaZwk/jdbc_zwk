@@ -18,6 +18,7 @@ public class RouteDao {
             preparedStatement.setString(4,route.getDepartureTime());
             preparedStatement.setInt(5,route.getArrivalLocationId());
             preparedStatement.setInt(6,route.getDepartureLocationId());
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }

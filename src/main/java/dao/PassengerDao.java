@@ -18,6 +18,7 @@ public class PassengerDao {
             preparedStatement.setString(4,passenger.getEmail());
             preparedStatement.setInt(5,passenger.getLuggageId());
             preparedStatement.setInt(6,passenger.getPassengerId());
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
