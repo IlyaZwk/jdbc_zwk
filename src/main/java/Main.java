@@ -9,6 +9,10 @@ public class Main {
         airplane.setId(123);
         airplane.setRouteId(123);
         airplaneDao.create(airplane);
+        Airplane airplane1 = new Airplane();
+        airplane1.setId(123);
+        airplaneDao.delete(airplane1);
+
     }
 
 }

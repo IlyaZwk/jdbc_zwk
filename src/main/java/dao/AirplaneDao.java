@@ -23,9 +23,27 @@ public class AirplaneDao {
 
     }
     public void update(Airplane airplane) {
+        try {
+            Connection connection = DataSource.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("update airplane set airplaneId = ?, routeId = ? where id = ?");
+            preparedStatement.setInt(1,airplane.getAirplaneId());
+            preparedStatement.setInt(2,airplane.getRouteId());
+            preparedStatement.setInt(3,airplane.getId());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
     public void delete(Airplane airplane) {
+        try {
+            Connection connection = DataSource.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("delete from airplane where id = ?");
+            preparedStatement.setInt(1,airplane.getId());
 
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

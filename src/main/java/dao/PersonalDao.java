@@ -21,9 +21,26 @@ public class PersonalDao {
         }
     }
     public void update(Personal personal) {
-
+        try {
+            Connection connection = DataSource.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("update personal set type = ?, personalId = ? where id = ?");
+            preparedStatement.setString(1,personal.getType());
+            preparedStatement.setInt(2,personal.getPersonalId());
+            preparedStatement.setInt(3,personal.getId());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
     public void delete(Personal personal) {
+        try {
+            Connection connection = DataSource.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("delete from personal where id = ?");
+            preparedStatement.setInt(1,personal.getId());
 
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

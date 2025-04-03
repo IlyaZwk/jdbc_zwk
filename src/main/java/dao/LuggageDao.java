@@ -21,9 +21,26 @@ public class LuggageDao {
         }
     }
     public void update(Luggage luggage) {
-
+        try {
+            Connection connection = DataSource.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("update luggage set weight = ?, luggageId = ? where id =?");
+            preparedStatement.setInt(1,luggage.getWeight());
+            preparedStatement.setInt(2,luggage.getLuggageId());
+            preparedStatement.setInt(3,luggage.getId());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
     public void delete(Luggage luggage) {
+        try {
+            Connection connection = DataSource.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("delete from luggage where id = ?");
+            preparedStatement.setInt(1,luggage.getId());
 
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
